@@ -20,3 +20,10 @@ export async function getCats() {
     
     return response.data;
 }
+
+export async function getDogs() {
+    const response = await client
+        .from('dogs')
+        .select();
+    return response.data;
+}

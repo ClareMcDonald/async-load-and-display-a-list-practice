@@ -1,10 +1,12 @@
 // import functions and grab DOM elements
 import { renderCandies } from './render-candies.js';
 import { renderCats } from './render-cats.js';
-import { getCandies, getCats } from './fetch-utils.js';
+import { renderDogs } from './render-dogs.js';
+import { getCandies, getCats, getDogs } from './fetch-utils.js';
 
 const candyContainer = document.getElementById('candy-container');
 const catContainer = document.getElementById('cat-container');
+const dogContainer = document.getElementById('dog-container');
 
 // let state
 
@@ -30,5 +32,15 @@ window.addEventListener('load', async() => {
         const catEl = renderCats(cat);
 
         catContainer.append(catEl);
+    }
+});
+
+window.addEventListener('load', async() => {
+    const dogs = await getDogs();
+  
+    for (let dog of dogs) {
+        const dogEl = renderDogs(dog);
+
+        dogContainer.append(dogEl);
     }
 });
