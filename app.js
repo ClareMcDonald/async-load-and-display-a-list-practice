@@ -2,11 +2,13 @@
 import { renderCandies } from './render-candies.js';
 import { renderCats } from './render-cats.js';
 import { renderDogs } from './render-dogs.js';
-import { getCandies, getCats, getDogs } from './fetch-utils.js';
+import { renderCars } from './render-cars.js';
+import { getCandies, getCats, getDogs, getCars } from './fetch-utils.js';
 
 const candyContainer = document.getElementById('candy-container');
 const catContainer = document.getElementById('cat-container');
 const dogContainer = document.getElementById('dog-container');
+const carContainer = document.getElementById('car-container');
 
 // let state
 
@@ -42,5 +44,15 @@ window.addEventListener('load', async() => {
         const dogEl = renderDogs(dog);
 
         dogContainer.append(dogEl);
+    }
+});
+
+window.addEventListener('load', async() => {
+    const cars = await getCars();
+
+    for (let car of cars) {
+        const carEl = renderCars(car);
+
+        carContainer.append(carEl);
     }
 });

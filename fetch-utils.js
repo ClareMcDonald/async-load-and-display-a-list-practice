@@ -27,3 +27,10 @@ export async function getDogs() {
         .select();
     return response.data;
 }
+
+export async function getCars() {
+    const response = await client
+        .from('cars')
+        .select();
+    return response.data;
+}
