@@ -89,3 +89,19 @@ footer {
     background-color: var(--color3);
     box-shadow: var(--shadow);
 }
+
+.candy-item {
+    background-color: pink;
+}
+
+.cat-item {
+    background-color: burlywood;
+}
+
+.dog-item {
+    background-color: lightgray;
+}
+
+.car-item {
+    background-color: lightgreen;
+}
