@@ -12,3 +12,11 @@ export async function getCandies() {
     
     return response.data;
 }
+
+export async function getCats() {
+    const response = await client
+        .from('cats')
+        .select();
+    
+    return response.data;
+}
